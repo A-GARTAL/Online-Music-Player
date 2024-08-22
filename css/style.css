@@ -98,11 +98,6 @@ li {
   font-size: 1.2rem;
 }
 
-
-.container_footer {
-
-}
-
 .player_btns {
   display: flex;
   flex-direction: row;
@@ -129,7 +124,6 @@ li {
   height: 70px;
   width: 70px;
   padding: 10px 8px 10px 12px;
-  /* animation: 5s rotate infinite ; */
 }
 
 @keyframes rotate {
@@ -159,36 +153,9 @@ li {
   outline: none;
 } 
 
-
-/* #voulme_range {
-  -webkit-appearance: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  padding: 0;
-  width: 20rem;
-  height: 3.5rem;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  border-radius: 1rem;
-  overflow: hidden;
-  cursor: row-resize; 
-}*/
-
-
-/* #voulme_range[step] {
-  background-color: transparent;
-  background-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) calc(12.5% - 1px), #05051a 12.5%);
-} */
 #voulme_range::-webkit-slider-thumb {
   appearance: none;
   width: 0;
   border-radius: 100%;
   box-shadow: -20rem 0 0 20rem var(--sub_color_75);
 }
-/* #voulme_range::-moz-range-thumb {
-  border: none;
-  width: 0;
-  box-shadow: -20rem 0 0 20rem var(--main_color_50);
-} */
