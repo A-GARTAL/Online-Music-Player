@@ -73,7 +73,6 @@ function player(action){
     ++currentMusic;
     if(currentMusic > musicList.length-1)
       currentMusic = 0;
-    console.log(currentMusic)
     musicImg.setAttribute('src', musicList[currentMusic].image)
     musicName.innerHTML =  musicList[currentMusic].name;
     musicSinger.innerHTML = musicList[currentMusic].singer;
