@@ -12,6 +12,8 @@ let next = document.querySelector('.next');
 next.addEventListener('click' , function(){
   player('MediaTrackNext')
 })
+let musicTimeShower = document.getElementById('music_time');
+musicTimeShower.addEventListener('change' , changeMusicTime);
 let musicImg = document.getElementById('music_image');
 let musicName = document.getElementById('music_name');
 let musicSinger = document.getElementById('music_singer');
@@ -101,9 +103,6 @@ function player(action){
   }
 }
 
-let musicTimeShower = document.getElementById('music_time')
-musicTimeShower.addEventListener('change' , changeMusicTime)
-
 setInterval(function(){
   musicTimeShower.value = audioElem.currentTime
   setMusicTime()
@@ -113,7 +112,6 @@ function setMusicTime(){
   setTimeout(function(){
     let D = audioElem.duration
     musicTimeShower.setAttribute('max' , D)
-    console.log(D)
   }, 1) 
 }
 function changeMusicTime(){
