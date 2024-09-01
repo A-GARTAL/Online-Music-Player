@@ -30,7 +30,7 @@ let musicList = [
    image:"image/Tom Odell - Another Love.jpg" , name:"Another Love" , singer:"Tom Odell"}
 ]
 
-
+setVolume();
 function playOrStop() {
   if(!isPlay)
   {
@@ -39,6 +39,7 @@ function playOrStop() {
     playStop.setAttribute('src' ,"icon/pause.png");
     audioElem.play();
     isPlay = true;
+
   }
   else 
   {
@@ -47,6 +48,7 @@ function playOrStop() {
     playStop.setAttribute('src' , "icon/play.png");
     audioElem.pause();
     isPlay = false;
+
   }
 }
 
@@ -73,14 +75,13 @@ function player(action){
     musicImg.setAttribute('src', musicList[currentMusic].image)
     musicName.innerHTML =  musicList[currentMusic].name;
     musicSinger.innerHTML = musicList[currentMusic].singer;
-    audioElem.setAttribute('src', musicList[currentMusic].src)
+    audioElem.setAttribute('src', musicList[currentMusic].src)  
     if(isPlay)
       {
         playStop.setAttribute('src' ,"icon/pause.png");
         audioElem.play();
         isPlay = true;
       }
-      
   }
   if(action == 'MediaTrackPrevious')
   {
@@ -98,7 +99,23 @@ function player(action){
         isPlay = true;
       }
   }
-  
-  
 }
 
+let musicTimeShower = document.getElementById('music_time')
+musicTimeShower.addEventListener('change' , changeMusicTime)
+
+setInterval(function(){
+  musicTimeShower.value = audioElem.currentTime
+  setMusicTime()
+},1000)
+
+function setMusicTime(){
+  setTimeout(function(){
+    let D = audioElem.duration
+    musicTimeShower.setAttribute('max' , D)
+    console.log(D)
+  }, 1) 
+}
+function changeMusicTime(){
+  audioElem.currentTime = musicTimeShower.value;
+}
